@@ -47,7 +47,6 @@ def get_date_changes(dates):
     # Returns a list of tuples from the dataframe dates column
     # The tuple will be [index of change, last two digits of year]
     #   The type will be a List[int, string]
-    # Remember to include the start and end years
     dc_list= []
     for index, item in enumerate(dates):
         temp_list = []
@@ -85,14 +84,6 @@ def plot_data(cols, r):
     
 
 def plot_finalize(dc, r):
-    # Set the xticks to the values from the date changes variable
-    # Set x ticks to be every 1
-    # Set the axis range to be reasonable
-    #     Lower left should be the origin
-    # Turn the grid on
-    # Show the legend
-    # Show (for testing)
-    # Save (for submitting)
     xticks = []
     xlabels = []
     for i in dc:
@@ -126,18 +117,8 @@ def wrangle():
     # https://www.macrotrends.net/2521/30-year-treasury-bond-rate-yield-chart
 
 if __name__ == "__main__":
-    # This is idiomatic for the main function
-    # Notice how there's no code in the global scope except for import statements
-    # Notice how the functions are short and do only 1 small thing
-    # Try to follow these programming practices
-        # Only imports, functions, and decorators (@jit, etc) in global scope
-        # Short functions
-        # Deterministic functions which compute then return
-        # Write tests when sensible (not required for this assignment)
-
-    # This has been commented out (as a courtesy to minimize load)
+  
     scrape() 
     #load_data('data.p')
 
-    # You'll be implementing some minor functions to plot the data
     wrangle()
